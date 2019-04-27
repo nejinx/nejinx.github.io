@@ -1,0 +1,388 @@
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #333 url("background.jpg") no-repeat fixed center center;
+    background-size: cover;
+    color: #eee;
+    font: 15pt/17pt Roboto, Impact, sans-serif;
+    cursor: default;
+    text-align: center;
+}
+
+::-moz-selection {
+    color: black;
+    background: #6C93B1;
+}
+
+::selection {
+    color: black;
+    background: #6C93B1
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    font-weight: bold;
+}
+
+em {
+    font-style: bold;
+}
+
+.header {
+    font-size: 24pt;
+    text-transform: uppercase;
+    line-height: 1;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+body.choicePage{
+    display: table;
+    width: 100%;
+}
+
+body.choicePage .wrapper {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.header * {
+    position: relative;
+    z-index: 11;
+}
+
+.header .links {
+    text-align: center;
+    line-height: 1.2;
+    font-size: 50%;
+    z-index: 20;
+}
+
+.header a.premalink {
+    color:white ;
+    padding: 0.5em o;
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+.header a.reset {
+    color: red;
+}
+
+.header,
+.summary {
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+.header h1 {
+    color: #AECECF;
+    font-size: 140%;
+}
+
+.header h1 em {
+  font-style: normal;
+  font-size: 200%;
+  position: relative;
+  top: 0.15em;
+}
+
+.header h2 {
+  color: #AECECF;
+  font-size: 150%;
+}
+
+.header h3 {
+  font-size: 80%;
+}
+
+.treeCollection {
+  text-align: center;
+  width: 1005px;
+  height: 799px;
+  margin: 20px auto 30px auto;
+  position: relative;
+  z-index: 20;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.treewrapper {
+    float: left;
+    width: 335px;
+    height: 799px;
+}
+
+.tree {
+    width: 174px;
+    text-align: center;
+    margin: 20px auto 0;
+}
+
+.bglayer {
+    position: absolute;
+    width: 335px;
+    height: 799px;
+}
+
+.bglayer.color {
+    height: 80px;
+}
+
+.red .gray {
+    background: url("skill_bg.png")
+}
+
+.purple .gray {
+    background: url("skill_bg.png")
+}
+
+.green .gray {
+    background: url("skill_bg.png")
+}
+
+.blue .gray {
+    background: url("skill_bg.png")
+}
+
+.red .color {
+    background: url("skill_bg.png")
+}
+
+.purple .color {
+    background: url("skill_bg.png")
+}
+
+.green .color {
+    background: url("skill_bg.png")
+}
+
+.blue .color {
+    background: url("skill_bg.png")
+}
+
+.skill {
+    padding: 3px;
+    width: 61px;
+    height: 61px;
+    cursor: pointer;
+    position: relative;
+    float: left;
+}
+
+.skill>img {
+    width: 61px;
+    height: 61px;
+}
+
+.specSkill {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.points {
+    visibility: hidden;
+    position: absolute;
+    width: 63px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 0;
+    right: 0;
+    padding: 0 2px;
+    background: url("nodeLevel.png") transparent;
+    color: white;
+}
+
+.specSkill .points {
+    visibility: initial;
+}
+
+.skill.partial .points {
+    color: white;
+}
+
+.skill.full .points {
+    color: #F80
+}
+
+.tree .description,
+.specSkill .description {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 200px;
+    z-index: 21;
+    background-color: #111;
+    color: white;
+    padding: 0 0.25em 0.5em;
+    text-align: center;
+}
+
+.red .description,
+.purple .description {
+    left: 110%;
+}
+
+.green .description,
+.blue .description {
+    right: 110%;
+}
+
+.tree .description h2,
+.specSkill .description h2 {
+    padding: 0.15em 0;
+    margin-bottom: 0.15em;
+    font-size: 125%;
+    border-bottom: 1px solid gray;
+}
+
+.summary {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    position: relative;
+    margin: 10px 0 0;
+    padding: 8px 0;
+    line-height: 1.1;
+    z-index: 10;
+}
+
+.descriptionContainer {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.descriptionContainer div.skillText {
+    clear: both;
+    border-top: 1px solid white;
+    text-align: left;
+}
+
+.descriptionContainer strong {
+  display: block;
+  font-weight: normal;
+  font-size: 120%;
+  float: left;
+  clear: left;
+  width: 220px;
+  margin-right: -220px;
+  text-align: right;
+}
+
+.descriptionContainer div.descriptionText {
+  margin: 4px 0 4px 230px;
+  padding: 0;
+}
+
+.descriptionContainer .perLevel {
+  display: none;
+}
+
+.footer {
+  padding-top: 50px;
+  margin-top: auto;
+  text-align: center;
+  font-size: 70%;
+  color: white;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer a {
+  color: white;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer a:hover {
+  color: #AECECF;
+}
+
+.skill.partial .description em {
+  color: white;
+}
+
+.skill.full .description em {
+  color: #F80;
+}
+
+.skill:hover .description {
+    display: block;
+}
+
+.skill:hover .description:hover {
+    display: none;
+}
+
+.specSkill:hover .description {
+    display: block;
+}
+
+.specSkill:hover .description:hover {
+    display: none;
+}
+
+a.biglink {
+  display: inline-block;
+  color: inherit;
+  padding: 1em;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid white;
+  text-decoration: none;
+}
+
+a.biglink:hover {
+  background: black;
+  text-decoration: underline;
+}
+
+a.unavailable {
+  cursor: not-allowed;
+}
+
+a.unavailable:hover {
+  text-decoration: none;
+}
+
+img.portrait {
+  position: absolute;
+  position: fixed;
+  height: 95%;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.stamp {
+  display: block;
+  color: #006CB0;
+  font-size: 0.8em;
+}
+
+@media (min-width: 80em) {
+  .stamp {
+    display: inline-block;
+    position: absolute;
+    transform: rotate(10deg);
+    margin: 0.6em 0 0 0.2em;
+  }
+}

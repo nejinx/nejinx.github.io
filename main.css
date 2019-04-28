@@ -105,6 +105,9 @@ em {
   font-size: 80%;
 }
 
+/* 
+Default values for the combined amount of tech trees 
+*/
 .treeCollection {
   text-align: center;
   width: 1381.60px;
@@ -119,6 +122,9 @@ em {
   user-select: none;
 }
 
+/* 
+Spaces out the trees
+*/
 .treewrapper {
     float: left;
     width: 335px;
@@ -132,12 +138,18 @@ em {
     margin: 5px auto 0;
 }
 
+/* 
+Sets size of tree backgrounds
+*/
 .bglayer {
     position: absolute;
     width: 335px;
     height: 799px;
 }
 
+/* 
+Sets each trees background 
+*/
 .combat {
     background: url("skill_bg_combat.png")
 }

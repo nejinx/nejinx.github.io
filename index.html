@@ -2,16 +2,363 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Generation Zero Skill Calculator</title>
+        <title>Generation Zero Skill Planner</title>
         <link href="main.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     </head>
-    <body class="choicePage">
-        <div class="wrapper">
-            <div class="header">
-                <h1>Generation Zero skill calculator</h1>
+
+    <body>
+        <div class="header">
+            <div class="links"><a class="reset">Reset</a> | <a href="#" class="permalink">Permalink to this build</a></div>
+            <h1>Generation Zero Skill Planner</h1>
+            <h2>Survivor</h2>
+            <h3>Level <span class="charLevel">1</span></h3>
+        </div>
+
+<!-- Combat Tree -->
+        <div class="treeCollection">
+            <div class="treewrapper combat"> 
+                <div class="bglayer combat"></div>
+                <div class="tree">
+                <!-- FIRST TIER SKILLS -->
+                    <div class="tier" data-level="0" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeCombat.png"> <!-- Aim Speed -->
+                            <div class="description"><h2>AIM SPEED</h2>Provides an increase to the speed with which you aim down sights.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeCombat.png"> <!-- Reload Speed -->
+                            <div class="description"><h2>RELOAD SPEED</h2>Provides an increase to the speed of reloading weapons.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SECOND TIER SKILLS -->
+                    <div class="tier" data-level="1" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="3"><img src="nodeLocked.png"> <!-- Hip Shot Accuracy -->
+                            <div class="description"><h2>HIP SHOT ACCURACY</h2>Lowers the negative spread impact of firing when shooting from the hip.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- Run And Gun -->
+                            <div class="description"><h2>RUN AND GUN</h2>Lowers the negative spread impact of firing while moving.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- THIRD TIER SKILLS -->
+                    <div class="tier" data-level="2" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- Weapon Recoil -->
+                            <div class="description"><h2>WEAPON RECOIL</h2>Provides a decrease to the amount of recoil when firing any weapon.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="3"><img src="nodeLocked.png"> <!-- Armor -->
+                            <div class="description"><h2>ARMOR</h2>Provides an increase to your damage resistance.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FOURTH TIER SKILLS -->
+                    <div class="tier" data-level="3" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="3"><img src="nodeLocked.png"> <!-- Weapon Sway -->
+                            <div class="description"><h2>WEAPON SWAY</h2>Provides a decrease to the amount of weapon sway when aiming.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- Armor Damage -->
+                            <div class="description"><h2>ARMOR DAMAGE</h2>Increases amount of damage done to enemy armor.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FIFTH TIER SKILLS -->
+                    <div class="tier" data-level="4" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- Make 'Em Count-->
+                            <div class="description"><h2>MAKE 'EM COUNT</h2>Single shot fire with automatic weapons does more damage to components.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- Trigger Happy -->
+                            <div class="description"><h2>TRIGGER HAPPY</h2>Increases amount of damage dealt when using automatic fire.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SPECIALIZATIONS -->
+                    <div class="tier" data-level="5" data-invested="0" data-total="0">
+                        <div class="specSkill" data-points="0" data-max="1"><img src="specLocked.png"> <!-- Marksman Specialization -->
+                            <div class="description"><h2>MARKSMAN</h2>While active, the Marksman specialization completely eliminates weapon sway when using any weapon.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="specSkill push1" data-points="0" data-max="1"><img src="specLocked.png"> <!-- Vanguard Specialization -->
+                            <div class="description"><h2>VANGUARD</h2>While active, the Vanguard specialization increases your damage resistance with 25%.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="totalPoints">
+                    <span class="totalPoints">0</span>
+                </div>
+                <legend>Total Points</legend>
+            </div>
+
+<!-- Support Tree -->
+            <div class="treewrapper support"> 
+                <div class="bglayer support"></div>
+                <div class="tree">
+                <!-- FIRST TIER SKILLS -->
+                    <div class="tier" data-level="0" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeSupport.png"> <!-- NAME -->
+                            <div class="description"><h2>THROW ACCURACY</h2>Provides a percentage decrease to the random offset of your throwing accuracy.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeSupport.png"> <!-- NAME -->
+                            <div class="description"><h2>THROW DISTANCE</h2>Provides an increase to the distance you can throw throwable items.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SECOND TIER SKILLS -->
+                    <div class="tier" data-level="1" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>FLANKING</h2>Increased chance of causing stagger when firing on an enemy that is targeting another player.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>HEALER</h2>Unlocks the ability to heal other players with a medkit.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- THIRD TIER SKILLS -->
+                    <div class="tier" data-level="2" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>ENEMY MARKING</h2>Spotting enemies will highlight them to all players for a short period of time.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>HEAL AMOUNT</h2>Increases the healing amount when using medkits.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FOURTH TIER SKILLS -->
+                    <div class="tier" data-level="3" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>VETERAN GUERILLA</h2>Marked enemies that are destroyed yield increased amount of base XP.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>DESIGNATED TARGET</h2>Marked enemies take additional damage.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FIFTH TIER SKILLS -->
+                    <div class="tier" data-level="4" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>LAST MAN STANDING</h2>Provides a boost to your damage resistance for every player (including you) that drops below 10% health. Including downed players.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>REVIVE SPEED</h2>Lowers the time it takes to revive a downed teammate.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SPECIALIZATION -->
+                    <div class="tier" data-level="5" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="specLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>COMMANDER</h2>While the Commander specialization is active, deployed Field Radios can be used an additional 3 times. (Total of 6 uses).<br><br>>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="specLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>MEDIC</h2>While the Medic specialization is active, any player you revive, including yourself, return to the game with 100% health.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="totalPoints">
+                    <span class="totalPoints">0</span>
+                </div>
+                <legend>Total Points</legend>
+            </div>
+
+<!-- Survival Tree -->
+            <div class="treewrapper survival"> 
+                <div class="bglayer survival"></div>
+                <div class="tree">
+                <!-- FIRST TIER SKILLS -->
+                    <div class="tier" data-level="0" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeSurvival.png"> <!-- NAME -->
+                            <div class="description"><h2>STAMINA AMOUNT</h2>Increases the maximum amount of stamina your character has.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeSurvival.png"> <!-- NAME -->
+                            <div class="description"><h2>STAMINA RECHARGE</h2>Increases the rate at which stamina recharges.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SECOND TIER SKILLS -->
+                    <div class="tier" data-level="1" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>RUNNING SPEED</h2>Increases the jogging and sprinting speed of your character.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>HEALTH AMOUNT</h2>Increases the maximum amount of health your character has.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- THIRD TIER SKILLS -->
+                    <div class="tier" data-level="2" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>CARRY CAPACITY</h2>Unlocks an additional bar in the inventory.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>STEADY FEET</h2>Allows player to withstand stronger attacks without being knocked down.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FOURTH TIER SKILLS -->
+                    <div class="tier" data-level="3" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>VISIBILITY</h2>Decreases visibility to enemies.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>MOVEMENT NOISE</h2>Decreases noise made by moving.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FIFTH TIER SKILLS -->
+                    <div class="tier" data-level="4" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>DOWN BUT NOT OUT</h2>Downed state timer is doubled, extending the time during which allies can revive you.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>COVERT MOVEMENT SPEED</h2>Increases movement speed when not in a standing stance.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SPECIALIZATION -->
+                    <div class="tier" data-level="5" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="specLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>SURVIVOR</h2>While the Survivor specialization is active, you may respawn on your corpse once per combat.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="specLocked.png"> <!-- NAME -->
+                            <div class="description"><h2>COMMANDO</h2>While the Commando specialization is active, the first damage dealt on any unaware enemy is increased by 15%.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="totalPoints">
+                    <span class="totalPoints">0</span>
+                </div>
+                <legend>Total Points</legend>
+            </div>
+
+<!-- Tech Tree -->
+            <div class="treewrapper tech"> 
+                <div class="bglayer tech"></div>
+                <div class="tree">
+                <!-- FIRST TIER SKILLS -->
+                    <div class="tier" data-level="0" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeTech.png"> <!-- SPOTTING INTEL -->
+                            <div class="description"><h2>SPOTTING INTEL</h2>Increases the amount of information provided when spotting.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeTech.png"> <!-- CHEMIST -->
+                            <div class="description"><h2>CHEMIST</h2>Increases your base gas resistance by 10%.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SECOND TIER SKILLS -->
+                    <div class="tier" data-level="1" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- INQUISITIVE MIND -->
+                            <div class="description"><h2>INQUISITIVE MIND</h2>Increases the amount of XP you earn for completing missions.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- LOCKPICKING -->
+                            <div class="description"><h2>LOCKPICKING</h2>Unlocks the ability to unlock non-special locked doors using lockpick items.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- THIRD TIER SKILLS -->
+                    <div class="tier" data-level="2" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- COMPONENT DAMAGE -->
+                            <div class="description"><h2>COMPONENT DAMAGE</h2>Increases the amount of damage done to enemy components.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- SALVAGE -->
+                            <div class="description"><h2>SALVAGE</h2>Increases the amount of ammo gained from any ammo stack when looting.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FOURTH TIER SKILLS -->
+                    <div class="tier" data-level="3" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- EMP EXPERT -->
+                            <div class="description"><h2>EMP EXPERT</h2>Improves the impact of using EMP weaponry.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- MECHANIC -->
+                            <div class="description"><h2>MECHANIC</h2>Unlocks the ability to scavenge enemy components even if they are damaged.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- FIFTH TIER SKILLS -->
+                    <div class="tier" data-level="4" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="nodeLocked.png"> <!-- REMOTE HACKING -->
+                            <div class="description"><h2>REMOTE HACKING</h2>Unlocks the ability to hack enemies. Allows you to hack enemies using your binoculars, confusing them temporarily.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="nodeLocked.png"> <!-- EXPLOSIVES EXPERT -->
+                            <div class="description"><h2>EXPLOSIVES EXPERT</h2>Improves the impact of using explosive weaponry.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                <!-- SPECIALIZATION -->
+                    <div class="tier" data-level="5" data-invested="0" data-total="0">
+                        <div class="skill" data-points="0" data-max="1"><img src="specLocked.png"> <!-- ENGINEER -->
+                            <div class="description"><h2>ENGINEER</h2>While the Hacker specialization is active, any remote hacking will cause enemies to attack other enemies.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+
+                        <div class="skill push1" data-points="0" data-max="2"><img src="specLocked.png"> <!-- ENGINEER -->
+                            <div class="description"><h2>ENGINEER</h2>While the Engineer specialization is active, the player may scavenge undamaged Tick Pods from enemies and use them to deploy Ticks that attack enemies.<br><br>Only one specialization may be active at a time.</div>
+                            <div class="points"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="totalPoints">
+                    <span class="totalPoints">0</span>
+                </div>
+                <legend>Total Points</legend>
             </div>
         </div>
+
+        <div class="summary">
+	        <h2>List of Skills & Specializations:</h2>
+	        <div class="descriptionContainer"></div>
+	        <div class="footer">Art &copy; 2019 <a href="https://avalanchestudios.com/" target="_blank">Avalanche Studio</a>. <a href="https://www.google.com/webfonts" target="_blank">Fonts</a> by Google. Code hosted on Github. <a href="https://github.com/BiddinWar/gzskills">Source Code</a>.</div>
+        </div>
+
     </body>
 </html>

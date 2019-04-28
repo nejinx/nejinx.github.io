@@ -31,10 +31,14 @@ body {
 }
 
 h1,
-h2,
-h3 {
+h2{
     margin: 0;
-    font-weight: bold;
+    font-weight: black;
+}
+
+h3{
+    margin: 0;
+    font-weight: normal;
 }
 
 em {
@@ -47,17 +51,6 @@ em {
     line-height: 1;
     padding-bottom: 10px;
     margin-bottom: 10px;
-}
-
-body.choicePage{
-    display: table;
-    width: 100%;
-}
-
-body.choicePage .wrapper {
-    display: table-cell;
-    width: 100%;
-    vertical-align: middle;
 }
 
 .header * {
@@ -83,7 +76,7 @@ body.choicePage .wrapper {
 }
 
 .header a.reset {
-    color: red;
+    color: rgb(255, 51, 0);
 }
 
 .header,
@@ -92,7 +85,7 @@ body.choicePage .wrapper {
 }
 
 .header h1 {
-    color: #AECECF;
+    color: #6C93B1;
     font-size: 140%;
 }
 
@@ -105,7 +98,7 @@ body.choicePage .wrapper {
 
 .header h2 {
   color: #AECECF;
-  font-size: 150%;
+  font-size: 110%;
 }
 
 .header h3 {
@@ -114,9 +107,9 @@ body.choicePage .wrapper {
 
 .treeCollection {
   text-align: center;
-  width: 1005px;
-  height: 799px;
-  margin: 20px auto 30px auto;
+  width: 1381.60px;
+  height: 756.40px;
+  margin: 0px auto 30px auto;
   position: relative;
   z-index: 20;
   -moz-user-select: none;
@@ -130,12 +123,13 @@ body.choicePage .wrapper {
     float: left;
     width: 335px;
     height: 799px;
+    margin: 5px;
 }
 
 .tree {
-    width: 174px;
+    width: 262px;
     text-align: center;
-    margin: 20px auto 0;
+    margin: 5px auto 0;
 }
 
 .bglayer {
@@ -144,44 +138,24 @@ body.choicePage .wrapper {
     height: 799px;
 }
 
-.bglayer.color {
-    height: 80px;
+.combat {
+    background: url("skill_bg_combat.png")
 }
 
-.red .gray {
-    background: url("skill_bg.png")
+.support {
+    background: url("skill_bg_support.png")
 }
 
-.purple .gray {
-    background: url("skill_bg.png")
+.survival {
+    background: url("skill_bg_survival.png")
 }
 
-.green .gray {
-    background: url("skill_bg.png")
-}
-
-.blue .gray {
-    background: url("skill_bg.png")
-}
-
-.red .color {
-    background: url("skill_bg.png")
-}
-
-.purple .color {
-    background: url("skill_bg.png")
-}
-
-.green .color {
-    background: url("skill_bg.png")
-}
-
-.blue .color {
-    background: url("skill_bg.png")
+.tech {
+    background: url("skill_bg_tech.png")
 }
 
 .skill {
-    padding: 3px;
+    padding: 25px;
     width: 61px;
     height: 61px;
     cursor: pointer;
@@ -195,9 +169,17 @@ body.choicePage .wrapper {
 }
 
 .specSkill {
-    display: inline-block;
-    position: relative;
+    padding: 9px;
+    width: 91px;
+    height: 91px;
     cursor: pointer;
+    position: relative;
+    float: left;
+}
+
+.specSkill>img {
+    width: 91px;
+    height: 91px;
 }
 
 .points {
@@ -211,10 +193,6 @@ body.choicePage .wrapper {
     padding: 0 2px;
     background: url("nodeLevel.png") transparent;
     color: white;
-}
-
-.specSkill .points {
-    visibility: initial;
 }
 
 .skill.partial .points {
@@ -238,14 +216,65 @@ body.choicePage .wrapper {
     text-align: center;
 }
 
-.red .description,
-.purple .description {
-    left: 110%;
+.tier,
+div.totalPoints,
+legend {
+  clear: both;
 }
 
-.green .description,
-.blue .description {
-    right: 110%;
+div.totalPoints {
+  text-align: right;
+}
+
+legend,
+span.totalPoints {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 20pt;
+  color: white;
+  text-shadow: black 0 0 4px;
+  position: absolute;
+  display: block;
+  width: 262px;
+}
+
+legend {
+  width: 262px;
+  color: white;
+  text-align: left;
+}
+
+.push1 {
+  margin-left: 40px;
+}
+
+.skill.partial .perLevel,
+.skill.full .perLevel {
+  display: none;
+}
+
+.tree .description,
+.actionSkill .description
+ {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 350px;
+  z-index: 21;
+  background-color: #111;
+  color: white;
+  padding: 0 0.25em 0.5em;
+  text-align: center;
+}
+
+.combat .description,
+.support .description {
+    left: 90%;
+}
+
+.survival .description,
+.tech .description {
+    right: 90%;
 }
 
 .tree .description h2,
@@ -268,7 +297,7 @@ body.choicePage .wrapper {
 }
 
 .descriptionContainer {
-    max-width: 700px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -361,28 +390,4 @@ a.unavailable {
 
 a.unavailable:hover {
   text-decoration: none;
-}
-
-img.portrait {
-  position: absolute;
-  position: fixed;
-  height: 95%;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-.stamp {
-  display: block;
-  color: #006CB0;
-  font-size: 0.8em;
-}
-
-@media (min-width: 80em) {
-  .stamp {
-    display: inline-block;
-    position: absolute;
-    transform: rotate(10deg);
-    margin: 0.6em 0 0 0.2em;
-  }
 }

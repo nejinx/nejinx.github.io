@@ -77,18 +77,3 @@ function checkLongTouch(fromTimer) {
         lastTouched = null;
     }
 }
-
-function updatePoints(skillManage, change) {
-    var tree = skillManage.parent().parent();
-	var thisLevel = parseInt(skillManage.parent().attr("data-level"));
-	var invested = parseInt(skillManage.parent().attr("data-invested"));
-	var tierTotal = parseInt(skillManage.parent().attr("data-total"));
-	var treeTotal = parseInt(tree.find("span.totalPoints").text());
-	var points = parseInt(skillManage.attr("data-points"));
-	var max = parseInt(skillManage.attr("data-max"));
-    var charLevel = parseInt($("span.charLevel").text());
-
-    if(change > 0) {
-        if (points < max && treeTotal >=)
-    }
-}

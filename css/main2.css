@@ -1,0 +1,182 @@
+
+body {
+    background-image: url("../img/backgrounds/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+#SkillTreeContainer {
+    background-color: black;
+    float: left;
+    user-select: none;
+}
+
+#DetailsWindow {
+    background-color: black;
+    opacity: 0.8;
+    width: 335px;
+    height: 798px;
+}
+
+    #DetailsWindow h2, h3, p {
+        padding-left: 25px;
+        color: ghostwhite;
+    }
+
+.skillTree {
+    width: 335px;
+    height: 798px;
+    float: left;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rankIndicator {
+    color: ghostwhite;
+    background-image: url("../img/backgrounds/rank.png");
+    width: 63px;
+    height: 30px;
+    position: absolute;
+    bottom: -15px;
+}
+    .rankIndicator div {
+        padding: 10% 0;
+        text-align: center;
+    }
+
+    .rankIndicator.hidden{
+        visibility: hidden;
+    }
+
+#CombatSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_combat.png");
+}
+
+#SupportSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_support.png");
+}
+
+#SurvivalSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_survival.png");
+}
+
+#TechSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_tech.png");
+}
+
+
+.path {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url("../img/backgrounds/line.png");
+    background-position: center;
+    background-repeat: repeat-y;
+}
+
+.skillNode {
+    margin: 0 auto;
+    width: 61px;
+    height: 61px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Needed so the rank counter is centered*/
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.combat {
+    background-image: url("../img/skillNodes/nodeCombat.png");
+}
+
+    .combat:hover {
+        background-image: url("../img/skillNodes/nodeCombat.png");
+    }
+
+.support {
+    background-image: url("../img/skillNodes/nodeSupport.png");
+}
+
+    .support:hover {
+        background-image: url("../img/skillNodes/nodeSupport.png");
+    }
+
+.survival {
+    background-image: url("../img/skillNodes/nodeSurvival.png");
+}
+
+    .survival:hover {
+        background-image: url("../img/skillNodes/nodeSurvival.png");
+    }
+
+.tech {
+    background-image: url("../img/skillNodes/nodeTech.png");
+}
+
+    .tech:hover {
+        background-image: url("../img/skillNodes/nodeTech.png");
+    }
+
+/* locked must be placed after the normal ones so we overwrite them */
+.locked {
+    background-image: url("../img/skillNodes/nodeLocked.png");
+}
+
+    .locked:hover {
+        background-image: url("../img/skillNodes/nodeLocked.png");
+    }
+
+
+.specialization {
+    width: 91px;
+    height: 91px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .specialization.combat {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.combat:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.support {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.support:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.survival {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.survival:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.tech {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.tech:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+    /* locked should be placed last*/
+    .specialization.locked {
+        background-image: url("../img/skillNodes/specLocked.png");
+    }
+
+        .specialization.locked:hover {
+            background-image: url("../img/skillNodes/specLocked.png");
+        }

@@ -38,6 +38,7 @@ body {
 
 .rankIndicator {
     color: ghostwhite;
+    font-weight: bold;
     background-image: url("../img/backgrounds/rank.png");
     width: 63px;
     height: 30px;

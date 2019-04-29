@@ -125,7 +125,7 @@ function SetupSkillTree(tree) {
         div.classList.add("hidden");
         var maxRank = skillDictionary[key.toUpperCase()].MaxRank;
         var currentRank = 0;
-        div.innerHTML = '<span name="currentRank">' + currentRank + '</span>/<span name="maxRank">' + maxRank + '</span>';
+        div.innerHTML = '<div><span name="currentRank">' + currentRank + '</span> / <span name="maxRank">' + maxRank + '</span></div>';
         skillNodes[i].appendChild(div);
 
         //add onEnter eventhandler

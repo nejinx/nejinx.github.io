@@ -35,7 +35,16 @@
 const TotalSkillPoints = 31;
 const MaxPlayerLevel = 31;
 var SkillPointsSpent;
+var SpecSkillActive;
 
+//skill node array
+var SkillNodeElements =
+{
+    'COMBAT': { },
+    'SUPPORT': { },
+    'SURVIVAL': { },
+    'TECH': { }
+};
 
 //elements
 var PlayerClass;
@@ -55,6 +64,7 @@ function InitOnLoad() {
     SkillPointsLeft = document.getElementById("SkillPointsLeft");
     SkillName = document.getElementById("SkillName");
     SkillDescription = document.getElementById("SkillDescription");
+    SpecSkillActive = false;
 
     UpdatePlayerStats();
 
@@ -107,6 +117,9 @@ function SetupSkillTree(tree) {
     //root 1 is always element 0, so now we must find root 2
     var root2 = nodesPerTree; //sinse index start at 0 this will get the first element in path 2 (right one)
 
+    //init the elementNodeList
+    var nodeElementArray = new Array(nrOfNodes);
+
     var i;
     for (i = 0; i < nrOfNodes; i++) {
         var key = keyPrefix + "_" + (i + 1);
@@ -152,8 +165,12 @@ function SetupSkillTree(tree) {
             return false;
         }, false);
 
-
+        //add skill to element array
+        nodeElementArray[i] = skillNodes[i];
     }
+
+    //add array
+    SkillNodeElements[keyPrefix.toUpperCase()] = nodeElementArray;
 }
 
 //this happens when you right click a skill
@@ -167,6 +184,17 @@ function onRightClick(skill) {
 
     if (currentRank > 0) {
 
+        var indexobj = GetIndexFromNode(skill);
+
+        var elementList = SkillNodeElements[indexobj[0]];
+        var i = parseInt(indexobj[1]);
+
+        //check if the next nodes counter is hidden. - if so do nothing
+        if (!skill.classList.contains("specialization") &&
+            !elementList[i].getElementsByClassName("rankIndicator")[0].classList.contains("hidden")) {
+            return;
+        }
+
         SkillPointsSpent--;
         currentRank--;
         currentRankElement.innerHTML = currentRank;
@@ -175,12 +203,18 @@ function onRightClick(skill) {
             //hide the indicator
             counter.classList.add("hidden");
 
-            //lock the skill
-            skill.classList.add("locked");
-
-            //lock the next ranks
+            //hide the counter
+            counter.classList.add("hidden");
+            
+            if (skill.classList.contains("specialization")) {
+                SpecSkillActive = false;
+            }
+            else {
+                //lock the next rank
+                elementList[i].classList.add("locked");
+            }
         }
-        
+
 
         UpdatePlayerStats();
     }
@@ -203,13 +237,29 @@ function onLeftClick(skill) {
     var currentRank = parseInt(currentRankElement.innerHTML)
     var maxRank = parseInt(maxRankElement.innerHTML)
 
-    if (currentRank < maxRank) {
+    if (skill.classList.contains("specialization") && SpecSkillActive && currentRank <= 0) {
+        return;
+    }
 
+    if (currentRank < maxRank &&
+        !skill.classList.contains("locked")) {
         if (currentRank == 0) {
             //show the indicator
             counter.classList.remove("hidden");
+            //unlock next rank if this is not a specialization skill.
+            if (!skill.classList.contains("specialization")) {
 
-            //unlock the next ranks
+                var indexobj = GetIndexFromNode(skill);
+
+                var elementList = SkillNodeElements[indexobj[0]];
+                var i = parseInt(indexobj[1]);
+
+                elementList[i].classList.remove("locked");
+            }
+            else {
+                //it is a spec skill. make sure we can only have one!
+                SpecSkillActive = true;
+            }
         }
         skill.classList.remove("locked");
 
@@ -220,6 +270,14 @@ function onLeftClick(skill) {
         UpdatePlayerStats();
     }
 
+}
+
+function GetIndexFromNode(node) {
+    var key = node.getAttribute("data-key");
+    //key has format TYPE_INDEX, exampel COMBAT_1
+    var index = key.split("_");
+
+    return index;
 }
 
 //skilldata is defined in SkillTable.js

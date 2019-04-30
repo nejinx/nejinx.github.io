@@ -28,7 +28,18 @@ body {
         color: ghostwhite;
     }
 
+.skillTreeHeader {
+    position: absolute;
+    top: 0px;
+    margin-top: 10px;
+    color: ghostwhite;
+    font-weight: lighter;
+    /*text-decoration: underline;*/
+    font-size: 32px;
+}
+
 .skillTree {
+    position: relative;
     width: 335px;
     height: 798px;
     float: left;
@@ -43,14 +54,15 @@ body {
     width: 63px;
     height: 30px;
     position: absolute;
-    bottom: -15px;
+    bottom: -28px;
 }
+
     .rankIndicator div {
         padding: 10% 0;
         text-align: center;
     }
 
-    .rankIndicator.hidden{
+    .rankIndicator.hidden {
         visibility: hidden;
     }
 
@@ -86,7 +98,6 @@ body {
     height: 61px;
     background-repeat: no-repeat;
     background-position: center;
-
     /* Needed so the rank counter is centered*/
     position: relative;
     display: flex;

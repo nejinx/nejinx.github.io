@@ -39,7 +39,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName' : "CombatSpec1Title"
     },
     //=========================
     //  COMBAT RIGHT TREE
@@ -78,7 +79,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "CombatSpec2Title"
     },
     //=========================
     //  SUPPORT LEFT TREE
@@ -117,7 +119,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "SupportSpec1Title"
     },
     //=========================
     //  SUPPORT RIGHT TREE
@@ -156,7 +159,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "titlesdfsfTitle"
     },
     //=========================
     //  SURVIVAL LEFT TREE
@@ -195,7 +199,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "titlesdfs23232fTitle"
     },
     //=========================
     //  SURVIVAL RIGHT TREE
@@ -234,7 +239,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "t34242itle"
     },
     //=========================
     //  TECH LEFT TREE
@@ -273,7 +279,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "titexhrexitle"
     },
     //=========================
     //  TECH RIGHT TREE
@@ -312,7 +319,8 @@ var skillDictionary =
     {
         'Name': "testNamn2",
         'Description': "bla lba",
-        'MaxRank': 3
+        'MaxRank': 3,
+        'PlayerClassName': "3itle"
     },
 
 

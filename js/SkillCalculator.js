@@ -34,6 +34,7 @@
 //global vars
 const TotalSkillPoints = 31;
 const MaxPlayerLevel = 31;
+const DefualtPlayerClass = "Survivor";
 var SkillPointsSpent;
 var SpecSkillActive;
 
@@ -65,6 +66,7 @@ function InitOnLoad() {
     SkillName = document.getElementById("SkillName");
     SkillDescription = document.getElementById("SkillDescription");
     SpecSkillActive = false;
+    PlayerClass.innerHTML = DefualtPlayerClass;
 
     UpdatePlayerStats();
 
@@ -207,6 +209,7 @@ function onRightClick(skill) {
             counter.classList.add("hidden");
             
             if (skill.classList.contains("specialization")) {
+                PlayerClass.innerHTML = DefualtPlayerClass;
                 SpecSkillActive = false;
             }
             else {
@@ -259,6 +262,8 @@ function onLeftClick(skill) {
             else {
                 //it is a spec skill. make sure we can only have one!
                 SpecSkillActive = true;
+                var skillData = skillDictionary[skill.dataset.key];
+                PlayerClass.innerHTML = skillData.PlayerClassName;
             }
         }
         skill.classList.remove("locked");

@@ -1,405 +1,205 @@
-html,
-body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    overflow-y: scroll;
-}
 
 body {
-    display: flex;
-    flex-direction: column;
-    background: #333 url("../img/backgrounds/background.jpg") no-repeat fixed center center;
+    background-image: url("../img/backgrounds/background.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
-    color: #eee;
-    font: 15pt/17pt Roboto, Impact, sans-serif;
-    cursor: default;
-    text-align: center;
 }
 
-::-moz-selection {
-    color: black;
-    background: #6C93B1;
+.center {
+    display: flex;
+    justify-content: center;
 }
 
-::selection {
-    color: black;
-    background: #6C93B1
-}
-
-h1,
-h2{
-    margin: 0;
-    font-weight: black;
-}
-
-h3{
-    margin: 0;
-    font-weight: normal;
-}
-
-em {
-    font-style: bold;
-}
-
-.header {
-    font-size: 24pt;
-    text-transform: uppercase;
-    line-height: 1;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.header * {
-    position: relative;
-    z-index: 11;
-}
-
-.header .links {
-    text-align: center;
-    line-height: 1.2;
-    font-size: 50%;
-    z-index: 20;
-}
-
-.header a.premalink {
-    color:white ;
-    padding: 0.5em o;
-    -moz-user-select: text;
-    -webkit-user-select: text;
-    -ms-user-select: text;
-    -moz-user-select: text;
-    user-select: text;
-}
-
-.header a.reset {
-    color: rgb(255, 51, 0);
-}
-
-.header,
-.summary {
-    background-color: rgba(0, 0, 0, 0.5)
-}
-
-.header h1 {
-    color: #6C93B1;
-    font-size: 140%;
-}
-
-.header h1 em {
-  font-style: normal;
-  font-size: 200%;
-  position: relative;
-  top: 0.15em;
-}
-
-.header h2 {
-  color: #AECECF;
-  font-size: 110%;
-}
-
-.header h3 {
-  font-size: 80%;
-}
-
-/* 
-Default values for the combined amount of tech trees 
-*/
-.treeCollection {
-  text-align: center;
-  width: 1381.60px;
-  height: 756.40px;
-  margin: 0px auto 30px auto;
-  position: relative;
-  z-index: 20;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-/* 
-Spaces out the trees
-*/
-.treewrapper {
+#SkillTreeContainer {
     float: left;
-    width: 335px;
-    height: 799px;
-    margin: 5px;
+    user-select: none;
 }
 
-.tree {
-    width: 262px;
-    text-align: center;
-    margin: 5px auto 0;
+#DetailsWindow {
+    background-color: black;
+    opacity: 0.8;
+    width: 400px;
+    height: 798px;
 }
 
-/* 
-Sets size of tree backgrounds
-*/
-.bglayer {
+    #DetailsWindow h2, h3, p {
+        padding-left: 25px;
+        color: ghostwhite;
+    }
+
+.skillTreeHeader {
     position: absolute;
+    top: 0px;
+    margin-top: 10px;
+    color: ghostwhite;
+    font-weight: lighter;
+    /*text-decoration: underline;*/
+    font-size: 32px;
+}
+
+.skillTree {
+    position: relative;
     width: 335px;
-    height: 799px;
-}
-
-/* 
-Sets each trees background 
-*/
-.combat {
-    background: url("../img/skillNodes/skill_bg_combat.png")
-}
-
-.support {
-    background: url("../img/skillNodes/skill_bg_support.png")
-}
-
-.survival {
-    background: url("../img/skillNodes/skill_bg_survival.png")
-}
-
-.tech {
-    background: url("../img/skillNodes/skill_bg_tech.png")
-}
-
-.skill {
-    padding: 25px;
-    width: 61px;
-    height: 61px;
-    cursor: pointer;
-    position: relative;
+    height: 798px;
+    margin-left: 10px;
     float: left;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.skill>img {
-    width: 61px;
-    height: 61px;
-}
-
-.specSkill {
-    padding: 9px;
-    width: 91px;
-    height: 91px;
-    cursor: pointer;
-    position: relative;
-    float: left;
-}
-
-.specSkill>img {
-    width: 91px;
-    height: 91px;
-}
-
-.points {
-    visibility: hidden;
-    position: absolute;
+.rankIndicator {
+    color: ghostwhite;
+    font-weight: bold;
+    background-image: url("../img/backgrounds/rank.png");
     width: 63px;
     height: 30px;
-    line-height: 30px;
-    bottom: 0;
-    right: 0;
-    padding: 0 2px;
-    background: url("../img/skillNodes/nodeLevel.png") transparent;
-    color: white;
-}
-
-.skill.partial .points {
-    color: white;
-}
-
-.skill.full .points {
-    color: #F80
-}
-
-.tree .description,
-.specSkill .description {
-    display: none;
     position: absolute;
-    top: 0;
-    width: 200px;
-    z-index: 21;
-    background-color: #111;
-    color: white;
-    padding: 0 0.25em 0.5em;
-    text-align: center;
+    bottom: -28px;
+}
+    .rankIndicator div {
+        padding: 10% 0;
+        text-align: center;
+    }
+
+    .rankIndicator.hidden {
+        visibility: hidden;
+    }
+
+#CombatSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_combat.png");
 }
 
-.tier,
-div.totalPoints,
-legend {
-  clear: both;
+#SupportSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_support.png");
 }
 
-div.totalPoints {
-  text-align: right;
+#SurvivalSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_survival.png");
 }
 
-legend,
-span.totalPoints {
-  text-transform: uppercase;
-  font-weight: normal;
-  font-size: 20pt;
-  color: white;
-  text-shadow: black 0 0 4px;
-  position: absolute;
-  display: block;
-  width: 262px;
+#TechSkillTree {
+    background-image: url("../img/backgrounds/skill_bg_tech.png");
 }
 
-legend {
-  width: 262px;
-  color: white;
-  text-align: left;
+
+.path {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-image: url("../img/backgrounds/line.png");
+    background-position: center;
+    background-repeat: repeat-y;
 }
 
-.push1 {
-  margin-left: 40px;
+.skillNode {
+    margin: 0 auto;
+    width: 61px;
+    height: 61px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* Needed so the rank counter is centered*/
+    position: relative;
+    display: flex;
+    justify-content: space-around;
 }
 
-.skill.partial .perLevel,
-.skill.full .perLevel {
-  display: none;
+.combat {
+    background-image: url("../img/skillNodes/nodeCombat.png");
 }
 
-.tree .description,
-.actionSkill .description
- {
-  display: none;
-  position: absolute;
-  top: 0;
-  width: 350px;
-  z-index: 21;
-  background-color: #111;
-  color: white;
-  padding: 0 0.25em 0.5em;
-  text-align: center;
+    .combat:hover {
+        background-image: url("../img/skillNodes/nodeCombat.png");
+    }
+
+.support {
+    background-image: url("../img/skillNodes/nodeSupport.png");
 }
 
-.combat .description,
-.support .description {
-    left: 90%;
+    .support:hover {
+        background-image: url("../img/skillNodes/nodeSupport.png");
+    }
+
+.survival {
+    background-image: url("../img/skillNodes/nodeSurvival.png");
 }
 
-.survival .description,
-.tech .description {
-    right: 90%;
+    .survival:hover {
+        background-image: url("../img/skillNodes/nodeSurvival.png");
+    }
+
+.tech {
+    background-image: url("../img/skillNodes/nodeTech.png");
 }
 
-.tree .description h2,
-.specSkill .description h2 {
-    padding: 0.15em 0;
-    margin-bottom: 0.15em;
-    font-size: 125%;
-    border-bottom: 1px solid gray;
+    .tech:hover {
+        background-image: url("../img/skillNodes/nodeTech.png");
+    }
+
+/* locked must be placed after the normal ones so we overwrite them */
+.locked {
+    background-image: url("../img/skillNodes/nodeLocked.png");
 }
 
+    .locked:hover {
+        background-image: url("../img/skillNodes/nodeLocked.png");
+    }
+
+
+.specialization {
+    width: 91px;
+    height: 91px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+    .specialization.combat {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.combat:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.support {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.support:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.survival {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.survival:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+
+    .specialization.tech {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.tech:hover {
+            background-image: url("../img/skillNodes/specIcon.png");
+        }
+    /* locked should be placed last*/
+    .specialization.locked {
+        background-image: url("../img/skillNodes/specLocked.png");
+    }
+
+        .specialization.locked:hover {
+            background-image: url("../img/skillNodes/specLocked.png");
+        }
+
+/* Summary of all selected skills */
 .summary {
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     position: relative;
-    margin: 10px 0 0;
-    padding: 8px 0;
     line-height: 1.1;
-    z-index: 10;
-}
-
-.descriptionContainer {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.descriptionContainer div.skillText {
-    clear: both;
-    border-top: 1px solid white;
-    text-align: left;
-}
-
-.descriptionContainer strong {
-  display: block;
-  font-weight: normal;
-  font-size: 120%;
-  float: left;
-  clear: left;
-  width: 220px;
-  margin-right: -220px;
-  text-align: right;
-}
-
-.descriptionContainer div.descriptionText {
-  margin: 4px 0 4px 230px;
-  padding: 0;
-}
-
-.descriptionContainer .perLevel {
-  display: none;
-}
-
-.footer {
-  padding-top: 50px;
-  margin-top: auto;
-  text-align: center;
-  font-size: 70%;
-  color: white;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer a {
-  color: white;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer a:hover {
-  color: #AECECF;
-}
-
-.skill.partial .description em {
-  color: white;
-}
-
-.skill.full .description em {
-  color: #F80;
-}
-
-.skill:hover .description {
-    display: block;
-}
-
-.skill:hover .description:hover {
-    display: none;
-}
-
-.specSkill:hover .description {
-    display: block;
-}
-
-.specSkill:hover .description:hover {
-    display: none;
-}
-
-a.biglink {
-  display: inline-block;
-  color: inherit;
-  padding: 1em;
-  margin: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid white;
-  text-decoration: none;
-}
-
-a.biglink:hover {
-  background: black;
-  text-decoration: underline;
-}
-
-a.unavailable {
-  cursor: not-allowed;
-}
-
-a.unavailable:hover {
-  text-decoration: none;
+    color: ghostwhite;
 }

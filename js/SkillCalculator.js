@@ -25,16 +25,12 @@
 //                           `.     |_.-'                           //
 //                             `-._.'                               //
 // Please don't mess with this unless you know what you're doing    //
-// --BiddinWar                                                      //
 //////////////////////////////////////////////////////////////////////
-
-
-
 
 //global vars
 const TotalSkillPoints = 31;
 const MaxPlayerLevel = 31;
-const DefualtPlayerClass = "Survivor";
+const DefaultPlayerClass = "Survivor";
 var SkillPointsSpent;
 var SpecSkillActive;
 
@@ -66,7 +62,7 @@ function InitOnLoad() {
     SkillName = document.getElementById("SkillName");
     SkillDescription = document.getElementById("SkillDescription");
     SpecSkillActive = false;
-    PlayerClass.innerHTML = DefualtPlayerClass;
+    PlayerClass.innerHTML = DefaultPlayerClass;
 
     UpdatePlayerStats();
 
@@ -209,7 +205,7 @@ function onRightClick(skill) {
             counter.classList.add("hidden");
             
             if (skill.classList.contains("specialization")) {
-                PlayerClass.innerHTML = DefualtPlayerClass;
+                PlayerClass.innerHTML = DefaultPlayerClass;
                 SpecSkillActive = false;
             }
             else {

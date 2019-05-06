@@ -25,6 +25,7 @@ body {
 
     #DetailsWindow h2, h3, p {
         padding-left: 25px;
+        padding-right: 25px;
         color: ghostwhite;
     }
 
@@ -105,12 +106,20 @@ body {
 }
 
 .combat {
-    background-image: url("../img/skillNodes/nodeCombat.png");
+    background-image: url("../img/skillNodes/nodeCombatUnlocked.png");
 }
 
     .combat:hover {
+        background-image: url("../img/skillNodes/nodeCombatHover.png");
+    }
+
+    .combat.active {
         background-image: url("../img/skillNodes/nodeCombat.png");
     }
+
+        .combat.active:hover {
+            background-image: url("../img/skillNodes/nodeCombat.png");
+        }
 
 .support {
     background-image: url("../img/skillNodes/nodeSupport.png");
@@ -120,6 +129,14 @@ body {
         background-image: url("../img/skillNodes/nodeSupport.png");
     }
 
+    .support.active {
+        background-image: url("../img/skillNodes/nodeSupport.png");
+    }
+
+        .support.active:hover {
+            background-image: url("../img/skillNodes/nodeSupport.png");
+        }
+
 .survival {
     background-image: url("../img/skillNodes/nodeSurvival.png");
 }
@@ -128,6 +145,14 @@ body {
         background-image: url("../img/skillNodes/nodeSurvival.png");
     }
 
+    .survival.active {
+        background-image: url("../img/skillNodes/nodeSurvival.png");
+    }
+
+        .survival.active:hover {
+            background-image: url("../img/skillNodes/nodeSurvival.png");
+        }
+
 .tech {
     background-image: url("../img/skillNodes/nodeTech.png");
 }
@@ -135,6 +160,14 @@ body {
     .tech:hover {
         background-image: url("../img/skillNodes/nodeTech.png");
     }
+
+    .tech.active {
+        background-image: url("../img/skillNodes/nodeTech.png");
+    }
+
+        .tech.active:hover {
+            background-image: url("../img/skillNodes/nodeTech.png");
+        }
 
 /* locked must be placed after the normal ones so we overwrite them */
 .locked {
@@ -146,6 +179,7 @@ body {
     }
 
 
+
 .specialization {
     width: 91px;
     height: 91px;
@@ -154,36 +188,69 @@ body {
 }
 
     .specialization.combat {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.combat:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.combat {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.combat:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
 
     .specialization.support {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.support:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.support {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.support:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
 
     .specialization.survival {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.survival:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
         }
 
-    .specialization.tech {
+    .specialization.active.survival {
         background-image: url("../img/skillNodes/specIcon.png");
     }
 
-        .specialization.tech:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+        .specialization.active.survival:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
+
+    .specialization.tech {
+        background-image: url("../img/skillNodes/specUnlocked.png");
+    }
+
+        .specialization.tech:hover {
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.tech {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.tech:hover {
+            background-image: url("../img/skillNodes/specActive.png");
+        }
+
     /* locked should be placed last*/
     .specialization.locked {
         background-image: url("../img/skillNodes/specLocked.png");

@@ -29,6 +29,20 @@ body {
         color: ghostwhite;
     }
 
+    #DetailsWindow a {
+        padding-left: 25px;
+        font-weight: bold;
+        color: orange;
+    }
+
+        #DetailsWindow a:hover {
+            color: yellow;
+        }
+
+#TxtSave {
+    position: absolute;
+}
+
 .skillTreeHeader {
     position: absolute;
     top: 0px;

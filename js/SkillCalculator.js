@@ -60,8 +60,6 @@ var SkillPointsLeft;
 var SkillName;
 var SkillDescription;
 
-var AllskillNodes;
-
 
 
 function InitOnLoad() {
@@ -82,6 +80,75 @@ function InitOnLoad() {
     SetupSkillTree(document.getElementById("SurvivalSkillTree"));
     SetupSkillTree(document.getElementById("TechSkillTree"));
 
+    //populate skills from parameter
+    var url_string = window.location.href
+    var url = new URL(url_string);
+    var skillParam = url.searchParams.get("skills");
+
+    if (skillParam !== null) {
+        PopulateSkillsFromParam(skillParam);
+    }
+
+}
+
+function PopulateSkillsFromParam(param) {
+    var skillData = param.split("-");
+    var allSkillNodes = document.getElementsByClassName("skillNode");
+
+    if (skillData.length != allSkillNodes.length) {
+        return;
+    }
+    
+
+    var i;
+    for (i = 0; i < allSkillNodes.length; i++) {
+
+        var rank = parseInt(skillData[i]);
+        if (isNaN(rank)) {
+            break;
+        }
+
+        if (rank > 0) {
+            onLeftClick(allSkillNodes[i], rank);
+        }
+        
+    }
+
+}
+
+function SaveBuild() {
+    var allSkillNodes = document.getElementsByClassName("skillNode");
+
+    var url_string = window.location.href.split('?')[0];
+    var url = new URL(url_string);
+
+    var param = "";
+
+    var i;
+    for (i = 0; i < allSkillNodes.length; i++) {
+
+        var counter = allSkillNodes[i].getElementsByClassName("rankIndicator")[0];
+        var counterElements = counter.getElementsByTagName('span');
+        var currentRankElement = counterElements[0];
+
+        var rank = parseInt(currentRankElement.innerHTML)
+
+        param += rank + "-"; 
+    }
+
+    param = param.substring(0, param.length - 1);
+
+    url.searchParams.append("skills", param);
+
+    const el = document.createElement('textarea');
+    el.value = url;
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
 }
 
 function UpdatePlayerStats() {
@@ -161,7 +228,7 @@ function SetupSkillTree(tree) {
 
         //add leftClick eventhandler
         skillNodes[i].addEventListener("click", function (e) {
-            onLeftClick(e.currentTarget);
+            onLeftClick(e.currentTarget, 1);
         });
 
         //add rightClick eventhandler
@@ -179,6 +246,7 @@ function SetupSkillTree(tree) {
 
     //add array
     SkillNodeElements[keyPrefix.toUpperCase()] = nodeElementArray;
+
 }
 
 //this happens when you right click a skill
@@ -234,16 +302,15 @@ function onRightClick(skill) {
             }
         }
 
-
         UpdatePlayerStats();
     }
 }
 
 //this happens when you right click a skill
-function onLeftClick(skill) {
+function onLeftClick(skill, nrToAdd) {
 
     //no skill points left? do nothing
-    if (TotalSkillPoints - SkillPointsSpent <= 0) {
+    if (TotalSkillPoints - (SkillPointsSpent * nrToAdd) <= 0) {
         return;
     }
 
@@ -260,7 +327,7 @@ function onLeftClick(skill) {
         return;
     }
 
-    if (currentRank < maxRank &&
+    if (currentRank + nrToAdd <= maxRank &&
         !skill.classList.contains("locked")) {
         if (currentRank == 0) {
             //show the indicator
@@ -288,8 +355,8 @@ function onLeftClick(skill) {
         }
         skill.classList.remove("locked");
 
-        SkillPointsSpent++;
-        currentRank++;
+        SkillPointsSpent += nrToAdd;
+        currentRank += nrToAdd;
         currentRankElement.innerHTML = currentRank;
 
         UpdatePlayerStats();

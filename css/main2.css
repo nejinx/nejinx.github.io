@@ -122,11 +122,11 @@ body {
         }
 
 .support {
-    background-image: url("../img/skillNodes/nodeSupport.png");
+    background-image: url("../img/skillNodes/nodeSupportUnlocked.png");
 }
 
     .support:hover {
-        background-image: url("../img/skillNodes/nodeSupport.png");
+        background-image: url("../img/skillNodes/nodeSupportHover.png");
     }
 
     .support.active {
@@ -138,11 +138,11 @@ body {
         }
 
 .survival {
-    background-image: url("../img/skillNodes/nodeSurvival.png");
+    background-image: url("../img/skillNodes/nodeSurvivalUnlocked.png");
 }
 
     .survival:hover {
-        background-image: url("../img/skillNodes/nodeSurvival.png");
+        background-image: url("../img/skillNodes/nodeSurvivalHover.png");
     }
 
     .survival.active {
@@ -154,11 +154,11 @@ body {
         }
 
 .tech {
-    background-image: url("../img/skillNodes/nodeTech.png");
+    background-image: url("../img/skillNodes/nodeTechUnlocked.png");
 }
 
     .tech:hover {
-        background-image: url("../img/skillNodes/nodeTech.png");
+        background-image: url("../img/skillNodes/nodeTechHover.png");
     }
 
     .tech.active {

@@ -240,7 +240,7 @@ var skillDictionary =
         'Name': "COMMANDO",
         'Description': "While the Commando specialization is active, the first damage dealt on any unaware enemy is increased by 15%.<br><br>Only one specialization may be active at a time.",
         'MaxRank': 1,
-        'PlayerClassName' : "No Pantsu~~"
+        'PlayerClassName' : "Commando"
     },
     //=========================
     //  TECH LEFT TREE

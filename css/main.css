@@ -27,6 +27,20 @@ body {
         color: ghostwhite;
     }
 
+    #DetailsWindow a {
+        padding-left: 25px;
+        font-weight: bold;
+        color: orange;
+    }
+
+        #DetailsWindow a:hover {
+            color: yellow;
+        }
+
+#TxtSave {
+    position: absolute;
+}
+
 .skillTreeHeader {
     position: absolute;
     top: 0px;
@@ -109,7 +123,7 @@ body {
 }
 
     .combat:hover {
-        background-image: url("../img/skillNodes/nodeCombat.png");
+        background-image: url("../img/skillNodes/nodeCombatHover.png");
     }
 
 .support {
@@ -117,7 +131,7 @@ body {
 }
 
     .support:hover {
-        background-image: url("../img/skillNodes/nodeSupport.png");
+        background-image: url("../img/skillNodes/nodeSupportHover.png");
     }
 
 .survival {
@@ -125,7 +139,7 @@ body {
 }
 
     .survival:hover {
-        background-image: url("../img/skillNodes/nodeSurvival.png");
+        background-image: url("../img/skillNodes/nodeSurvivalHover.png");
     }
 
 .tech {
@@ -133,7 +147,7 @@ body {
 }
 
     .tech:hover {
-        background-image: url("../img/skillNodes/nodeTech.png");
+        background-image: url("../img/skillNodes/nodeTechHover.png");
     }
 
 /* locked must be placed after the normal ones so we overwrite them */
@@ -195,11 +209,29 @@ body {
 
 /* Summary of all selected skills */
 .summary {
+    color: ghostwhite;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     position: relative;
+    margin: 10px 0 0;
     line-height: 1.1;
-    color: ghostwhite;
+    z-index: 10;
 }
+
+.footer {
+    padding-top: 50px;
+    margin-top: auto;
+    text-align: center;
+    font-size: 70%;
+    color: ghostwhite;
+  }
+  
+  .footer a {
+    color: ghostwhite;
+  }
+  
+  .footer a:hover {
+    color: orange;
+  }

@@ -11,19 +11,23 @@ body {
 }
 
 #SkillTreeContainer {
+    background-color: rgba(0,0,0,.8);
     float: left;
     user-select: none;
+    width: 75%;
+    min-width: 600px;
 }
 
 #DetailsWindow {
     background-color: black;
     opacity: 0.8;
-    width: 400px;
+    width: 335px;
     height: 798px;
 }
 
     #DetailsWindow h2, h3, p {
         padding-left: 25px;
+        padding-right: 25px;
         color: ghostwhite;
     }
 
@@ -53,12 +57,13 @@ body {
 
 .skillTree {
     position: relative;
-    width: 335px;
+    width: 25%;
     height: 798px;
-    margin-left: 10px;
     float: left;
     display: flex;
     justify-content: space-evenly;
+    background: center center;
+    background-size: cover;
 }
 
 .rankIndicator {
@@ -70,6 +75,7 @@ body {
     position: absolute;
     bottom: -28px;
 }
+
     .rankIndicator div {
         padding: 10% 0;
         text-align: center;
@@ -111,7 +117,6 @@ body {
     height: 61px;
     background-repeat: no-repeat;
     background-position: center;
-
     /* Needed so the rank counter is centered*/
     position: relative;
     display: flex;
@@ -119,36 +124,68 @@ body {
 }
 
 .combat {
-    background-image: url("../img/skillNodes/nodeCombat.png");
+    background-image: url("../img/skillNodes/nodeCombatUnlocked.png");
 }
 
     .combat:hover {
         background-image: url("../img/skillNodes/nodeCombatHover.png");
     }
 
+    .combat.active {
+        background-image: url("../img/skillNodes/nodeCombat.png");
+    }
+
+        .combat.active:hover {
+            background-image: url("../img/skillNodes/nodeCombat.png");
+        }
+
 .support {
-    background-image: url("../img/skillNodes/nodeSupport.png");
+    background-image: url("../img/skillNodes/nodeSupportUnlocked.png");
 }
 
     .support:hover {
         background-image: url("../img/skillNodes/nodeSupportHover.png");
     }
 
+    .support.active {
+        background-image: url("../img/skillNodes/nodeSupport.png");
+    }
+
+        .support.active:hover {
+            background-image: url("../img/skillNodes/nodeSupport.png");
+        }
+
 .survival {
-    background-image: url("../img/skillNodes/nodeSurvival.png");
+    background-image: url("../img/skillNodes/nodeSurvivalUnlocked.png");
 }
 
     .survival:hover {
         background-image: url("../img/skillNodes/nodeSurvivalHover.png");
     }
 
+    .survival.active {
+        background-image: url("../img/skillNodes/nodeSurvival.png");
+    }
+
+        .survival.active:hover {
+            background-image: url("../img/skillNodes/nodeSurvival.png");
+        }
+
 .tech {
-    background-image: url("../img/skillNodes/nodeTech.png");
+    background-image: url("../img/skillNodes/nodeTechUnlocked.png");
 }
 
     .tech:hover {
         background-image: url("../img/skillNodes/nodeTechHover.png");
     }
+
+    .tech.active {
+        background-image: url("../img/skillNodes/nodeTech.png");
+    }
+
+        .tech.active:hover {
+            background-image: url("../img/skillNodes/nodeTech.png");
+        }
 
 /* locked must be placed after the normal ones so we overwrite them */
 .locked {
@@ -160,6 +197,7 @@ body {
     }
 
 
+
 .specialization {
     width: 91px;
     height: 91px;
@@ -168,36 +206,69 @@ body {
 }
 
     .specialization.combat {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.combat:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.combat {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.combat:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
 
     .specialization.support {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.support:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.support {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.support:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
 
     .specialization.survival {
-        background-image: url("../img/skillNodes/specIcon.png");
+        background-image: url("../img/skillNodes/specUnlocked.png");
     }
 
         .specialization.survival:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+            background-image: url("../img/skillNodes/specHover.png");
         }
 
-    .specialization.tech {
+    .specialization.active.survival {
         background-image: url("../img/skillNodes/specIcon.png");
     }
 
-        .specialization.tech:hover {
-            background-image: url("../img/skillNodes/specIcon.png");
+        .specialization.active.survival:hover {
+            background-image: url("../img/skillNodes/specActive.png");
         }
+
+    .specialization.tech {
+        background-image: url("../img/skillNodes/specUnlocked.png");
+    }
+
+        .specialization.tech:hover {
+            background-image: url("../img/skillNodes/specHover.png");
+        }
+
+    .specialization.active.tech {
+        background-image: url("../img/skillNodes/specIcon.png");
+    }
+
+        .specialization.active.tech:hover {
+            background-image: url("../img/skillNodes/specActive.png");
+        }
+
     /* locked should be placed last*/
     .specialization.locked {
         background-image: url("../img/skillNodes/specLocked.png");
@@ -206,32 +277,3 @@ body {
         .specialization.locked:hover {
             background-image: url("../img/skillNodes/specLocked.png");
         }
-
-/* Summary of all selected skills */
-.summary {
-    color: ghostwhite;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    position: relative;
-    margin: 10px 0 0;
-    line-height: 1.1;
-    z-index: 10;
-}
-
-.footer {
-    padding-top: 50px;
-    margin-top: auto;
-    text-align: center;
-    font-size: 70%;
-    color: ghostwhite;
-  }
-  
-  .footer a {
-    color: ghostwhite;
-  }
-  
-  .footer a:hover {
-    color: orange;
-  }

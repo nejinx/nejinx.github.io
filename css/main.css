@@ -18,6 +18,11 @@ body {
     min-width: 600px;
 }
 
+#SkillThumb {
+    height: 155px;
+    width: 335px;
+}
+
 #DetailsWindow {
     background-color: black;
     opacity: 0.8;

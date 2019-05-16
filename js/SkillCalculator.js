@@ -47,10 +47,10 @@ const SkillTypeSorter = {
 //skill node array
 var SkillNodeElements =
 {
-    'COMBAT': { },
-    'SUPPORT': { },
-    'SURVIVAL': { },
-    'TECH': { }
+    'COMBAT': {},
+    'SUPPORT': {},
+    'SURVIVAL': {},
+    'TECH': {}
 };
 
 //elements
@@ -59,6 +59,7 @@ var PlayerLevel;
 var SkillPointsLeft;
 var SkillName;
 var SkillDescription;
+var SkillThumb;
 
 
 
@@ -69,6 +70,7 @@ function InitOnLoad() {
     SkillPointsLeft = document.getElementById("SkillPointsLeft");
     SkillName = document.getElementById("SkillName");
     SkillDescription = document.getElementById("SkillDescription");
+    SkillThumb = document.getElementById("SkillThumb");
     currentNrOfSpecializations = 0;
     PlayerClass.innerHTML = DefaultPlayerClass;
 
@@ -95,10 +97,10 @@ function PopulateSkillsFromParam(param) {
     var skillData = param.split("-");
     var allSkillNodes = document.getElementsByClassName("skillNode");
 
-    if (skillData.length != allSkillNodes.length) {
+    if (skillData.length - allSkillNodes.length < 0 ||
+        skillData.length - allSkillNodes.length > 1) {
         return;
     }
-    
 
     var i;
     for (i = 0; i < allSkillNodes.length; i++) {
@@ -111,7 +113,13 @@ function PopulateSkillsFromParam(param) {
         if (rank > 0) {
             onLeftClick(allSkillNodes[i], rank);
         }
-        
+
+    }
+
+    //we have a spec skill
+    if (skillData.length > allSkillNodes.length) {
+        var nodeIndex = skillData[skillData.length - 1];
+        onLeftClick(allSkillNodes[nodeIndex], 0);
     }
 
 }
@@ -124,6 +132,8 @@ function SaveBuild() {
 
     var param = "";
 
+    var specIndex = -1;
+
     var i;
     for (i = 0; i < allSkillNodes.length; i++) {
 
@@ -133,10 +143,24 @@ function SaveBuild() {
 
         var rank = parseInt(currentRankElement.innerHTML)
 
-        param += rank + "-"; 
+        if (allSkillNodes[i].classList.contains("specialization") && specIndex == -1) {
+            var skillData = skillDictionary[allSkillNodes[i].dataset.key];
+            if (skillData.PlayerClassName == PlayerClass.innerHTML) {
+                specIndex = i;
+            }
+        }
+
+        param += rank + "-";
     }
 
-    param = param.substring(0, param.length - 1);
+    //add specIndex last. might need to change if we ever get specializations with more than 1 rank..
+    if (specIndex != -1) {
+        param += specIndex;
+    }
+    else {
+        //remove trailing -
+        param = param.substring(0, param.length - 1);
+    }
 
     url.searchParams.append("skills", param);
 
@@ -323,8 +347,15 @@ function onLeftClick(skill, nrToAdd) {
     var currentRank = parseInt(currentRankElement.innerHTML)
     var maxRank = parseInt(maxRankElement.innerHTML)
 
-    if (skill.classList.contains("specialization") && (currentNrOfSpecializations >= MaxNrOfSpecializations) && currentRank <= 0) {
-        return;
+    if (skill.classList.contains("specialization") && (currentNrOfSpecializations >= MaxNrOfSpecializations)) {
+        if (currentRank <= 0) {
+            return;
+        }
+        //update spec?
+        else {
+            var skillData = skillDictionary[skill.dataset.key];
+            PlayerClass.innerHTML = skillData.PlayerClassName;
+        }
     }
 
     if (currentRank + nrToAdd <= maxRank &&
@@ -366,7 +397,7 @@ function onLeftClick(skill, nrToAdd) {
 
 function GetIndexFromNode(node) {
     var key = node.getAttribute("data-key");
-    //key has format TYPE_INDEX, exampel COMBAT_1
+    //key has format TYPE_INDEX, example COMBAT_1
     var index = key.split("_");
 
     return index;
@@ -377,5 +408,6 @@ function SetSkillDetails(skillData) {
 
     SkillName.innerHTML = skillData.Name;
     SkillDescription.innerHTML = skillData.Description;
+    SkillThumb.src = skillData.ImgSrc;
 }
 

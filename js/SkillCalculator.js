@@ -28,7 +28,7 @@
 //////////////////////////////////////////////////////////////////////
 
 //global vars
-const TotalSkillPoints = 31;
+const TotalSkillPoints = 30;
 const MaxPlayerLevel = 31;
 const MaxNrOfSpecializations = 2;
 var currentNrOfSpecializations;
@@ -102,10 +102,9 @@ function PopulateSkillsFromParam(param) {
         return;
     }
 
-    var i;
-    for (i = 0; i < allSkillNodes.length; i++) {
+    for (let i=0; i < allSkillNodes.length; i++) {
+        let rank = parseInt(skillData[i]);
 
-        var rank = parseInt(skillData[i]);
         if (isNaN(rank)) {
             break;
         }
@@ -131,11 +130,9 @@ function SaveBuild() {
     var url = new URL(url_string);
 
     var param = "";
-
     var specIndex = -1;
 
-    var i;
-    for (i = 0; i < allSkillNodes.length; i++) {
+    for (let i=0; i < allSkillNodes.length; i++) {
 
         var counter = allSkillNodes[i].getElementsByClassName("rankIndicator")[0];
         var counterElements = counter.getElementsByTagName('span');
@@ -219,8 +216,7 @@ function SetupSkillTree(tree) {
     //init the elementNodeList
     var nodeElementArray = new Array(nrOfNodes);
 
-    var i;
-    for (i = 0; i < nrOfNodes; i++) {
+    for (let i=0; i < nrOfNodes; i++) {
         var key = keyPrefix + "_" + (i + 1);
 
         skillNodes[i].setAttribute("data-key", key.toUpperCase());
@@ -332,9 +328,8 @@ function onRightClick(skill) {
 
 //this happens when you right click a skill
 function onLeftClick(skill, nrToAdd) {
-
     //no skill points left? do nothing
-    if (TotalSkillPoints - (SkillPointsSpent * nrToAdd) <= 0) {
+    if ((TotalSkillPoints - (SkillPointsSpent + nrToAdd)) < 0) {
         return;
     }
 

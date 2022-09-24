@@ -12,7 +12,7 @@ var skillDictionary =
         'Name': "AIM SPEED",
         'Description': "Provides an increase to the speed with which you aim down sights.",
         'MaxRank': 1,
-        'ImgPath': skillThumbPath + "AimSpeedThumb.png"
+        'ImgPath': skillThumbPath + "aim_speed.png"
     },
     "COMBAT_2":
     {
@@ -102,42 +102,42 @@ var skillDictionary =
     "SUPPORT_1":
     {
         'Name': "THROW ACCURACY",
-        'Description': "Provides a percentage decrease to the random offset of your throwing accuracy.<br><br>Level 1: -60% random offset<br><br>Level 2: -100% random offset",
-        'MaxRank': 3,
+        'Description': "Increaes the accuracy of thrown items.<br><br>Level 1: +60% increased accuracy<br><br>Level 2: +100% increased accuracy",
+        'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_2":
     {
         'Name': "FLANKING",
-        'Description': "Increased chance of causing stagger when firing on an enemy that is targeting another player.<br><br>Level 1: +20% chance of stagger<br><br>Level 2: +40% chance of stagger",
+        'Description': "Increases the chance of causing stagger when firing at an enemy that is targeting another player.<br><br>Level 1: +20% chance of stagger<br><br>Level 2: +40% chance of stagger",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_3":
     {
         'Name': "ENEMY MARKING",
-        'Description': "Spotting enemies will highlight them to all players for a short period of time.<br><br>Level 1: 15 second highlight<br><br>Level 2: 30 second highlight<br>",
+        'Description': "Unlocks the ability to spot enemies using your binoculars. Spotting enemies will highlight them to all nearby players for a short period of time.<br><br>Level 1: 15-second highlight<br><br>Level 2: 30-second highlight<br>",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_4":
     {
         'Name': "DESIGNATED TARGET",
-        'Description': "Marked enemies take additional damage.<br><br>Level 1: +5% damage<br><br>Level 2: +10% damage",
+        'Description': "Enemies marked using your binoculars take additional damage.<br><br>Level 1: +5% damage<br><br>Level 2: +10% damage",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_5":
     {
         'Name': "LAST MAN STANDING",
-        'Description': "Provides a boost to your damage resistance for every player (including you) that drops below 10% health. Including downed players.<br><br>Level 1: 5% damage resistance for 10 seconds.<br><br>Level 2: 10% damage resistance for 15 seconds.",
+        'Description': "Provides a boost to your damage resistance for every player (including yourself) that drops below 10% health. Including downed players.<br><br>Level 1: 5% damage resistance for 10 seconds.<br><br>Level 2: 10% damage resistance for 15 seconds.",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_6":
     {
         'Name': "COMMANDER",
-        'Description': "While the Commander specialization is active, deployed Field Radios can be used an additional 3 times. (Total of 6 uses).<br><br>When any player uses your deployed Field Radio as a respawn or fast travel point, 1 use is subtracted.",
+        'Description': "While the Commander specialization is active, deployed Field Radios can be used an additional 3 times. (Total of 6 uses).<br><br>When any player uses your deployed Field Radio as a respawn or fast travel point, 1 use is subtracted.<br><br>Only one specialization may be active at a time.",
         'MaxRank': 1,
         'PlayerClassName': "Commander",
         'ImgPath': skillThumbPath + "xxx.png"
@@ -148,42 +148,42 @@ var skillDictionary =
     "SUPPORT_7":
     {
         'Name': "THROW DISTANCE",
-        'Description': "Provides an increase to the distance you can throw throwable items.<br><br>Level 1: +15% throwing distance<br><br>Level 2: +30% Throwing distance",
+        'Description': "Increases the distance you can throw throwable items.<br><br>Level 1: +15% throwing distance<br><br>Level 2: +30% Throwing distance",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_8":
     {
         'Name': "HEALER",
-        'Description': "Unlocks the ability to heal other players with a medkit.<br>",
+        'Description': "Unlocks the ability to heal other nearby players with a first aid kit.",
         'MaxRank': 1,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_9":
     {
         'Name': "VETERAN GUERILLA",
-        'Description': "Marked enemies that are destroyed yield increased amount of base XP.<br><br>Level 1: +20% base XP<br><br>Level 2: +40% base XP",
+        'Description': "Increases the amount of base XP obtained when destroying a marked enemy.<br><br>Level 1: +20% base XP<br><br>Level 2: +40% base XP",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_10":
     {
         'Name': "HEAL AMOUNT",
-        'Description': "Increases the healing amount when using medkits.<br><br>Level 1: +20% heal amount<br><br>Level 2: +40% heal amount<br><br>Level 3: +60% heal amount",
+        'Description': "Increases the healing amount when using first aid kits.<br><br>Level 1: +20% heal amount<br><br>Level 2: +40% heal amount<br><br>Level 3: +60% heal amount",
         'MaxRank': 3,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_11":
     {
         'Name': "REVIVE SPEED",
-        'Description': "Lowers the time it takes to revive a downed teammate.<br><br>Level 1: 25% faster revive<br><br>Level 2: 50% faster revive",
+        'Description': "Lowers the time it takes to revive a downed player.<br><br>Level 1: 25% faster revive<br><br>Level 2: 50% faster revive",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SUPPORT_12":
     {
         'Name': "MEDIC",
-        'Description': "While the Medic specialization is active, any player you revive, including yourself, return to the game with 100% health.<br><br>Only one specialization may be active at a time.",
+        'Description': "While the Medic specialization is active, any player you revive (including yourself) returns to the game with 100% health.<br><br>Only one specialization may be active at a time.",
         'MaxRank': 1,
         'PlayerClassName': "Medic",
         'ImgPath': skillThumbPath + "xxx.png"
@@ -201,14 +201,14 @@ var skillDictionary =
     "SURVIVAL_2":
     {
         'Name': "RUNNING SPEED",
-        'Description': "Increases the jogging and sprinting speed of your character.<br><br>Level 1: 15% faster <br><br>Level 2: 30% faster ",
+        'Description': "Increases the running and sprinting speed of your character.<br><br>Level 1: 15% faster <br><br>Level 2: 30% faster",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SURVIVAL_3":
     {
         'Name': "CARRY CAPACITY",
-        'Description': "Unlocks an additional bar in the inventory.",
+        'Description': "Increase the inventory's maximum carry capacity for your character.",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
@@ -229,7 +229,7 @@ var skillDictionary =
     "SURVIVAL_6":
     {
         'Name': "SURVIVOR",
-        'Description': "While the Survivor specialization is active, you may respawn on your corpse once per combat.<br><br>Only one specialization may be active at a time.",
+        'Description': "While the Survivor specialization is active, you may revive yourself once per combat encounter without the use of an adrenaline shot.<br><br>Only one specialization may be active at a time.",
         'MaxRank': 1,
         'PlayerClassName': "Survivor",
         'ImgPath': skillThumbPath + "xxx.png"
@@ -240,28 +240,28 @@ var skillDictionary =
     "SURVIVAL_7":
     {
         'Name': "STAMINA RECHARGE",
-        'Description': "Increases the rate at which stamina recharges.<br><br>Level 1: 20% faster recharge <br><br>Level 2: 40% faster recharge ",
+        'Description': "Increases your stamina recharge rate.<br><br>Level 1: 20% faster recharge<br><br>Level 2: 40% faster recharge",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SURVIVAL_8":
     {
         'Name': "HEALTH AMOUNT",
-        'Description': "Increases the maximum amount of health your character has.<br><br>Level 1: 10% health increase<br><br>Level 2: 20% health increase<br><br>Level 3: 30% health increase",
+        'Description': "Increases your maximum health.<br><br>Level 1: 10% health increase<br><br>Level 2: 20% health increase<br><br>Level 3: 30% health increase",
         'MaxRank': 3,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SURVIVAL_9":
     {
         'Name': "VISIBILITY",
-        'Description': "Decreases visibility to enemies.<br><br>Level 1: 20% less visible<br><br>Level 2: 40% less visible <br><br>",
+        'Description': "Decreases visibility to enemies.<br><br>Level 1: 20% less visible<br><br>Level 2: 40% less visible",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "SURVIVAL_10":
     {
         'Name': "MOVEMENT NOISE",
-        'Description': "Decreases noise made by moving.<br><br>Level 1: 20% less noise<br><br>Level 2: 40% less noise",
+        'Description': "Decreases the noise you make by moving.<br><br>Level 1: 20% less noise<br><br>Level 2: 40% less noise",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
@@ -286,7 +286,7 @@ var skillDictionary =
     "TECH_1":
     {
         'Name': "SPOTTING INTEL",
-        'Description': "Increases the amount of information provided when spotting.<br><br>Level 1: Difficulty indicated<br><br>Level 2: Distance indicated",
+        'Description': "Increases the amount of information provided when spotting an enemy with the binoculars.<br><br>Level 1: Difficulty indicated<br><br>Level 2: Distance indicated",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
@@ -300,21 +300,21 @@ var skillDictionary =
     "TECH_3":
     {
         'Name': "COMPONENT DAMAGE",
-        'Description': "Increases the amount of damage done to enemy components.<br><br>Level 1: +5% damage<br><br>Level 2: +10% damage<br>",
+        'Description': "Increases the amount of damage done to enemy components.<br><br>Level 1: +5% damage<br><br>Level 2: +10% damage",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "TECH_4":
     {
         'Name': "EMP EXPERT",
-        'Description': "Improves the impact of using EMP weaponry.<br><br>Level 1: +25% EMP area of effect<br><br>Level 2: + 50% EMP area of effect",
+        'Description': "Improves the impact of using EMP weaponry.<br><br>Level 1: +25% EMP area of effect<br><br>Level 2: +50% EMP area of effect",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "TECH_5":
     {
         'Name': "REMOTE HACKING",
-        'Description': "Unlocks the ability to hack enemies. Allows you to hack enemies using your binoculars, confusing them temporarily..<br><br>Level 1: Hacked for 20 seconds<br><br>Level 2: hacked for 40 seconds",
+        'Description': "Unlocks the ability to hack enemies. Allows you to hack enemies using your binoculars, confusing them temporarily.<br><br>Level 1: Hacked for 20 seconds<br><br>Level 2: hacked for 40 seconds",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
@@ -346,7 +346,7 @@ var skillDictionary =
     "TECH_9":
     {
         'Name': "SALVAGE",
-        'Description': "Increases the amount of ammo gained from any ammo stack when looting.<br><br>Level 1: 50% ammo increase<br><br>Level 2: 100% ammo increase",
+        'Description': "Increases the amount of ammo found from in containers and when looting destroyed enemies.<br><br>Level 1: 50% ammo increase<br><br>Level 2: 100% ammo increase",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
@@ -360,7 +360,7 @@ var skillDictionary =
     "TECH_11":
     {
         'Name': "EXPLOSIVES EXPERT",
-        'Description': "Improves the impact of using explosive weaponry.<br><br>Level 1: +10% explosive damage <br><br>Level 2: +30% explosive area of effect",
+        'Description': "Improves the damage caused by explosive weaponry.<br><br>Level 1: +10% explosive damage<br><br>Level 2: +30% explosive area of effect",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },

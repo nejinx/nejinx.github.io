@@ -408,6 +408,6 @@ function SetSkillDetails(skillData) {
 
     SkillName.innerHTML = skillData.Name;
     SkillDescription.innerHTML = skillData.Description;
-    SkillThumb.src = skillData.ImgSrc;
+    SkillThumb.src = skillData.ImgPath;
 }
 

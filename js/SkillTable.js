@@ -10,28 +10,28 @@ var skillDictionary =
     "COMBAT_1":
     {
         'Name': "AIM SPEED",
-        'Description': "Provides an increase to the speed with which you aim down sights.",
+        'Description': "Increases the speed at which you aim down sights.",
         'MaxRank': 1,
         'ImgPath': skillThumbPath + "aim_speed.png"
     },
     "COMBAT_2":
     {
         'Name': "HIP SHOT ACCURACY",
-        'Description': "Lowers the negative spread impact of firing when shooting from the hip.<br><br>Level 1: -5% spread<br><br>Level 2: -10% spread<br><br>Level 3: -15% spread",
+        'Description': "Lowers bullet spread when shooting from the hip.<br><br>Level 1: -5% spread<br><br>Level 2: -10% spread<br><br>Level 3: -15% spread",
         'MaxRank': 3,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "COMBAT_3":
     {
         'Name': "WEAPON RECOIL",
-        'Description': "Provides a decrease to the amount of recoil when firing any weapon.<br><br>Level 1: -15% recoil<br><br>Level 2: -30% recoil",
+        'Description': "Decreases the amount of recoil when firing any weapon.<br><br>Level 1: -15% recoil<br><br>Level 2: -30% recoil",
         'MaxRank': 2,
         'ImgPath': skillThumbPath + "xxx.png"
     },
     "COMBAT_4":
     {
         'Name': "WEAPON SWAY",
-        'Description': "Provides a decrease to the amount of weapon sway when aiming.<br><br>Level 1: -15% weapon sway<br><br>Level 2: -30% weapon sway<br><br>Level 3: -45% weapon sway",
+        'Description': "Decreases the amount of weapon sway when aiming down sights.<br><br>Level 1: -15% weapon sway<br><br>Level 2: -30% weapon sway<br><br>Level 3: -45% weapon sway",
         'MaxRank': 3,
         'ImgPath': skillThumbPath + "xxx.png"
     },

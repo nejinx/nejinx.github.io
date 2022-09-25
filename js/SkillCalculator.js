@@ -30,7 +30,7 @@
 //global vars
 const TotalSkillPoints = 30;
 const MaxPlayerLevel = 31;
-const MaxNrOfSpecializations = 2;
+const MaxNrOfSpecializations = 1;
 var currentNrOfSpecializations;
 const DefaultPlayerClass = "&nbsp;";
 var SkillPointsSpent;
